@@ -1,0 +1,284 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nCREATE TABLE BRANCH(\n\n  branch_id int(10) not null,\n  branch_name char(20) not null,\n  branch_address char(25) not null,\n  branch_manager char(25) not null,\n  \n  CONSTRAINT pk_branch primary key (branch_id)\n\n);\n\nCREATE TABLE USER1 (\n  user_id INT(20) NOT NULL,\n  user_name CHAR(25) NOT NULL,\n  user_mob VARCHAR(15) NOT NULL,\n  user_mail VARCHAR(30) NOT NULL,\n  user_address VARCHAR(50) NOT NULL,\n  user_branch_id INT(10) NOT NULL,\n  \n  CONSTRAINT pk_user PRIMARY KEY (user_id),\n  CONSTRAINT fk_user_branch FOREIGN KEY (user_branch_id) \n    REFERENCES BRANCH(branch_id) \n    ON DELETE CASCADE \n    ON UPDATE CASCADE\n);\n\n\n  CREATE TABLE CREDIT_CARD(\n\n    crc_name varchar(25) not null,\n    crc_id int(15) not null,\n    crc_bal int(10) not null,\n    crc_type varchar(15) not null,\n    crc_user_id int(20) not null,\n\n    CONSTRAINT pk_credit_card primary key (crc_id),\n    CONSTRAINT p_crc_id FOREIGN KEY (crc_user_id) \n    REFERENCES USER1(user_id) ON DELETE CASCADE ON UPDATE CASCADE\n\n  );\n\n  CREATE TABLE LIMITS(\n    \n    limit_user_id int(15) not null,\n    limit_bal int(10) not null,\n    limit_crc_id int(15) not null,\n\n    CONSTRAINT pk_limits primary key (limit_user_id),\n    CONSTRAINT p_limit_id FOREIGN KEY (limit_crc_id) \n    REFERENCES CREDIT_CARD(crc_id) ON DELETE CASCADE ON UPDATE CASCADE\n\n  );\n\n  CREATE TABLE APPLICATIONS(\n\n    app_num int(10) not null,\n    app_user_id int(20) not null,\n    app_type varchar(20) not null,\n\n    CONSTRAINT pk_applications primary key (app_num),\n    CONSTRAINT p_app_id FOREIGN KEY (app_user_id)\n    REFERENCES USER1(user_id) ON DELETE CASCADE ON UPDATE CASCADE\n\n  );\n\n  ",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 67,
+                    "column": 3
+                },
+                "position": {
+                    "lineNumber": 67,
+                    "column": 3
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 1,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 0
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 104,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 67,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "2a0880e8-5ffe-4962-dace-f8ccef015512"
+                    ]
+                },
+                "currentHeight": 624.5625,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 210
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 210,
+                            "length": 407
+                        },
+                        "contentStart": 212,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 617,
+                            "length": 370
+                        },
+                        "contentStart": 622,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 987,
+                            "length": 318
+                        },
+                        "contentStart": 991,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 1305,
+                            "length": 307
+                        },
+                        "contentStart": 1309,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 1612,
+                            "length": 2
+                        },
+                        "contentStart": 1611,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ecda6371-9475-4d3c-b925-eda75f4d8943",
+                    "resultId": "2a0880e8-5ffe-4962-dace-f8ccef015512",
+                    "rows": [
+                        {
+                            "0": 11,
+                            "1": "Debmalya Sen",
+                            "2": "5550123456",
+                            "3": "ujjwalsen005@gmail.com",
+                            "4": "Sai Nagar Colony, St 19",
+                            "5": 5
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "user_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 5,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 20,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INT8",
+                                    "SERIAL"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_mob",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_mail",
+                            "field": "3",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_address",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "user_branch_id",
+                            "field": "5",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.846ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM user1 WHERE user_id=11",
+                    "updatable": true,
+                    "fullTableName": "user1"
+                }
+            ]
+        }
+    ]
+}
