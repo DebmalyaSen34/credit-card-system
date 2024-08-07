@@ -47,7 +47,7 @@ CREATE TABLE BRANCH(
   branch_manager CHAR(25) NOT NULL,
   CONSTRAINT pk_branch PRIMARY KEY (branch_id)
 );
-\```
+```
 
 ### User Table
 
@@ -65,7 +65,7 @@ CREATE TABLE USER1 (
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 );
-\```
+```
 
 ### Credit Card Table
 
@@ -82,7 +82,7 @@ CREATE TABLE CREDIT_CARD(
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 );
-\```
+```
 
 ### Limits Table
 
@@ -97,7 +97,7 @@ CREATE TABLE LIMITS(
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 );
-\```
+```
 
 ### Applications Table
 
